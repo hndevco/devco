@@ -1,0 +1,34 @@
+/* Custom Animations and Global Overrides for Tailwind Prototype */
+
+.loader-wrapper {
+    transition: opacity 0.5s ease;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Custom scrollbar for a modern look */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #050810;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0066FF;
+}
+
+/* Map override to avoid white flash */
+iframe {
+    background-color: #050810;
+}
+
+/* Clean links override (redundant but safe) */
+a {
+    text-decoration: none !important;
+}

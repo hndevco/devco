@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVCO | Ingeniería de Software & Futuro Digital</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066FF',
+                        secondary: '#0F172A',
+                        accent: '#38BDF8',
+                        darkBg: '#050810',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-white selection:bg-primary selection:text-white">
+    <div class="loader-wrapper fixed inset-0 bg-darkBg flex items-center justify-center z-[9999] transition-opacity duration-500">
+        <div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+    <!-- Immersive Background Blobs -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none blur-[120px] opacity-20">
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-primary rounded-full animate-pulse"></div>
+        <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-accent rounded-full animate-pulse delay-700"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600 rounded-full opacity-30"></div>
+    </div>
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 h-20 flex items-center">
+        <nav class="container mx-auto flex justify-between items-center px-6">
+            <div class="flex items-center gap-3">
+                <img src="imagenes/DEVCO.jpeg" alt="Logo" class="h-10 rounded-lg shadow-lg shadow-primary/20">
+                <span class="text-2xl font-jakarta font-extrabold tracking-tighter">DEVCO</span>
+            </div>
+            
+            <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <li><a href="#inicio" class="hover:text-white transition-colors">Ecosistema</a></li>
+                <li><a href="#soluciones" class="hover:text-white transition-colors">Soluciones</a></li>
+                <li><a href="#adn" class="hover:text-white transition-colors">ADN</a></li>
+                <li><a href="#equipo" class="hover:text-white transition-colors">Expertos</a></li>
+                <li>
+                    <a href="#contacto" class="bg-white text-darkBg px-6 py-2.5 rounded-full font-bold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-white/10">
+                        Hablemos
+                    </a>
+                </li>
+            </ul>
+
+            <button class="md:hidden text-3xl">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="inicio" class="min-h-screen flex items-center justify-center relative pt-20">
+            <div class="container mx-auto px-6 text-center reveal">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-accent mb-6">
+                    Engineering for the Next Era
+                </span>
+                <h1 class="text-5xl md:text-8xl font-jakarta font-extrabold mb-8 leading-tight tracking-tighter">
+                    Diseñamos el <span class="text-primary italic">Futuro</span><br>del Software.
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-light">
+                    Transformamos la complejidad técnica en experiencias digitales minimalistas y arquitecturas de alto rendimiento.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contacto" class="bg-primary hover:bg-blue-700 text-white px-10 py-4 rounded-2xl font-bold transition-all hover:-translate-y-1 shadow-xl shadow-primary/20">
+                        Iniciar Proyecto
+                    </a>
+                    <a href="#soluciones" class="bg-white/5 hover:bg-white/10 border border-white/10 px-10 py-4 rounded-2xl font-bold transition-all">
+                        Nuestra Ingeniería
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section class="py-20 border-y border-white/5 bg-white/[0.01]">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-12">Líderes que confían en nosotros</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+                    <div class="flex items-center gap-3">
+                        <ion-icon name="medkit-outline" class="text-4xl text-primary"></ion-icon>
+                        <span class="text-xl font-bold font-jakarta">Centro Médico Dias</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <ion-icon name="card-outline" class="text-4xl text-primary"></ion-icon>
+                        <span class="text-xl font-bold font-jakarta">Sistema de Cobros</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions -->
+        <section id="soluciones" class="py-32">
+            <div class="container mx-auto px-6">
+                <div class="mb-20 reveal">
+                    <h2 class="text-4xl md:text-6xl font-jakarta font-bold mb-6">Verticales de <span class="text-primary">Solución.</span></h2>
+                    <p class="text-slate-400 max-w-xl">Arquitecturas modulares diseñadas para escalar masivamente sin comprometer la integridad.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-10 rounded-[2.5rem] hover:bg-white/[0.05] transition-all group reveal">
+                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <ion-icon name="server-outline"></ion-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Cloud Systems</h3>
+                        <p class="text-slate-400 font-light leading-relaxed">Infraestructuras elásticas y microservicios orquestados para una disponibilidad global.</p>
+                    </div>
+                    <div class="glass-card p-10 rounded-[2.5rem] hover:bg-white/[0.05] transition-all group reveal">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <ion-icon name="phone-portrait-outline"></ion-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Experience Design</h3>
+                        <p class="text-slate-400 font-light leading-relaxed">Interfaces que anticipan las necesidades del usuario final con una estética minimalista.</p>
+                    </div>
+                    <div class="glass-card p-10 rounded-[2.5rem] hover:bg-white/[0.05] transition-all group reveal">
+                        <div class="w-16 h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-500 text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Cyber Integrity</h3>
+                        <p class="text-slate-400 font-light leading-relaxed">Protocolos de seguridad de grado militar integrados en cada capa del ecosistema.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADN -->
+        <section id="adn" class="py-32 bg-primary/5">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="text-primary font-bold text-sm tracking-widest uppercase mb-4 block">Nuestro ADN</span>
+                    <h2 class="text-4xl md:text-5xl font-jakarta font-bold mb-8">Innovación con <span class="italic text-slate-300">Propósito Digital.</span></h2>
+                    <div class="space-y-12">
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-xl">
+                                <ion-icon name="rocket-outline"></ion-icon>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Misión</h4>
+                                <p class="text-slate-400 font-light">Empoderar negocios a través de ingeniería de precisión, acelerando su transición hacia la economía digital.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-accent flex items-center justify-center text-xl text-darkBg">
+                                <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Visión</h4>
+                                <p class="text-slate-400 font-light">Ser el referente mundial en el desarrollo de software donde la estética y la robustez técnica conviven en armonía.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal">
+                    <div class="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-[3rem] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="ADN" class="w-full h-full object-cover mix-blend-overlay opacity-50">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 glass-card p-8 rounded-3xl animate-bounce">
+                        <span class="text-4xl font-bold text-primary">10+</span>
+                        <p class="text-xs text-slate-500 uppercase font-bold">Años de Expertis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section id="equipo" class="py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20 reveal">
+                    <h2 class="text-4xl md:text-6xl font-jakarta font-bold mb-4">Ingeniería <span class="text-primary">Humana.</span></h2>
+                    <p class="text-slate-400">El núcleo de DEVCO reside en el talento excepcional.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <div class="text-center group reveal">
+                        <div class="w-full aspect-[4/5] rounded-[3rem] overflow-hidden mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" alt="Team" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                        </div>
+                        <h4 class="text-2xl font-bold">Daniel Castillo</h4>
+                        <p class="text-primary font-medium text-sm">CTO & Founder</p>
+                    </div>
+                    <div class="text-center group reveal">
+                        <div class="w-full aspect-[4/5] rounded-[3rem] overflow-hidden mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Team" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                        </div>
+                        <h4 class="text-2xl font-bold">Elena Rivera</h4>
+                        <p class="text-primary font-medium text-sm">Head of Architecture</p>
+                    </div>
+                    <div class="text-center group reveal">
+                        <div class="w-full aspect-[4/5] rounded-[3rem] overflow-hidden mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" alt="Team" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                        </div>
+                        <h4 class="text-2xl font-bold">Roberto Sosa</h4>
+                        <p class="text-primary font-medium text-sm">Lead DevOps</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="glass-card rounded-[3rem] overflow-hidden grid md:grid-cols-2">
+                    <div class="p-12 md:p-20">
+                        <h3 class="text-3xl font-bold mb-6">Hub de <span class="text-primary">Innovación</span></h3>
+                        <p class="text-slate-400 mb-10 leading-relaxed">Ubicados en el corazón tecnológico, nuestro espacio está diseñado para la colaboración creativa y la ingeniería de alto nivel.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 text-slate-300">
+                                <ion-icon name="location" class="text-2xl text-primary"></ion-icon>
+                                <span>Distrito Tech, Edificio Quantum, Piso 12</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-slate-300">
+                                <ion-icon name="time" class="text-2xl text-primary"></ion-icon>
+                                <span>Lunes a Viernes, 9:00 - 18:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-[400px] md:h-auto grayscale contrast-125">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.752317769999!2d-87.2044!3d14.0818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDA0JzU0LjUiTiA4N8KwMTInMTUuOCJX!5e0!3m2!1ses!2shn!4v1620000000000!5m2!1ses!2shn" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contacto" class="py-32 relative overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto glass-card p-12 md:p-20 rounded-[3rem] reveal">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-jakarta font-bold mb-4">¿Listo para el <span class="text-primary">Siguiente Nivel</span>?</h2>
+                        <p class="text-slate-400">Cuéntanos tu visión y nosotros la convertiremos en código.</p>
+                    </div>
+
+                    <form action="#" class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-8">
+                            <div class="relative">
+                                <label class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-2 block">Nombre Completo</label>
+                                <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-primary transition-colors text-slate-300 placeholder:text-slate-600" placeholder="Ej. Juan Pérez">
+                            </div>
+                            <div class="relative">
+                                <label class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-2 block">Correo Corporativo</label>
+                                <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-primary transition-colors text-slate-300 placeholder:text-slate-600" placeholder="juan@empresa.com">
+                            </div>
+                            <div class="relative">
+                                <label class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-2 block">Servicio de Interés</label>
+                                <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-primary transition-colors text-slate-300 appearance-none">
+                                    <option class="bg-darkBg">Cloud Development</option>
+                                    <option class="bg-darkBg">Mobile Systems</option>
+                                    <option class="bg-darkBg">Cyber Security</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-2 block">Detalles del Proyecto</label>
+                            <textarea class="flex-grow bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-primary transition-colors text-slate-300 placeholder:text-slate-600 resize-none mb-8" placeholder="Háblanos de tus objetivos técnicos..."></textarea>
+                            <button type="submit" class="w-full bg-primary py-5 rounded-2xl font-bold text-lg hover:bg-blue-600 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                                Enviar Propuesta
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 pt-32 pb-12 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <!-- Col 1 -->
+                <div class="space-y-8">
+                    <div class="flex items-center gap-3">
+                        <img src="imagenes/DEVCO.jpeg" alt="Logo" class="h-10 rounded-lg">
+                        <span class="text-2xl font-jakarta font-extrabold tracking-tighter">DEVCO</span>
+                    </div>
+                    <p class="text-slate-500 font-light leading-relaxed">
+                        Redefiniendo el estándar de la ingeniería de software global mediante el diseño minimalista y la robustez técnica.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-xl hover:bg-primary transition-colors">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-xl hover:bg-primary transition-colors">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-xl hover:bg-primary transition-colors">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-8 font-jakarta">Mapa del Sitio</h4>
+                    <ul class="space-y-4 text-slate-500 font-light">
+                        <li><a href="#inicio" class="hover:text-primary transition-colors">Ecosistema Digital</a></li>
+                        <li><a href="#soluciones" class="hover:text-primary transition-colors">Verticales Técnicas</a></li>
+                        <li><a href="#adn" class="hover:text-primary transition-colors">Nuestro ADN</a></li>
+                        <li><a href="#equipo" class="hover:text-primary transition-colors">Expertos Senior</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-8 font-jakarta">Ecosistema</h4>
+                    <ul class="space-y-4 text-slate-500 font-light">
+                        <li><a href="#" class="hover:text-primary transition-colors">Cloud Platforms</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">AI Integration</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Cybersecurity Hub</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Mobile First</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-8 font-jakarta">Contacto</h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl">
+                                <ion-icon name="mail"></ion-icon>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase">Email</p>
+                                <p class="text-sm font-medium">hello@devco.com</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent text-xl">
+                                <ion-icon name="call"></ion-icon>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase">Teléfono</p>
+                                <p class="text-sm font-medium">+504 2222-3333</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-xs font-bold uppercase tracking-widest">
+                <p>&copy; 2026 DEVCO. ALL RIGHTS RESERVED.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition-colors">Legal</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Additional Navbar scroll logic
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-darkBg/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+            } else {
+                navbar.classList.remove('bg-darkBg/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+            }
+        });
+    </script>
+</body>
+</html>
